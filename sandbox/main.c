@@ -3,13 +3,15 @@
 #include "engine.h"
 
 
-int main(void*) {
-    int width = 500;
-    int height = 500;
-    char* winName = "Engine";
-
-    if(!createWindow(width, height, winName))
+int main() {
+    
+    struct engineStruct engineWindow;
+    if(!createWindow(500, 500, "Engine", &engineWindow))
         return 1;
+
+    windowLoop(&engineWindow);
+    
+    destroyWindow(&engineWindow);
     return 0;
     
 
