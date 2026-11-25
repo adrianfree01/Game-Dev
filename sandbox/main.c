@@ -1,12 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "engine.h"
 
 
 int main() {
     
     struct engineStruct engineWindow;
-    if(!createWindow(500, 500, "Engine", &engineWindow))
+    if(!createWindow(800, 600, "Engine", &engineWindow))
         return 1;
 
     windowLoop(&engineWindow);

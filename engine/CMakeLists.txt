@@ -15,6 +15,10 @@ FetchContent_MakeAvailable(glfw cglm glad)
 glad_add_library(glad_gl_core_33 REPRODUCIBLE API gl:core=3.3)
 
 add_library(engine STATIC)
+target_include_directories(engine
+    PRIVATE
+        src/include
+)
 
 target_link_libraries(engine
     PRIVATE
@@ -25,13 +29,11 @@ target_link_libraries(engine
 
 target_sources(engine
     PRIVATE
-        "src/platform/window.c"    
+        "src/platform/window.c"
     PUBLIC
         FILE_SET HEADERS # Quick little shortcut, if FILE_SET name = TYPE, you can leave out TYPE
         BASE_DIRS
             include
-        FILES
-            include/engine.h
 )
 
 target_compile_options(engine
