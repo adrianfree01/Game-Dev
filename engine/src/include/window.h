@@ -1,3 +1,0 @@
-struct glfwProc {
-    void* procAddr;
-};
