@@ -30,7 +30,8 @@ target_link_libraries(engine
 target_sources(engine
     PRIVATE
         "src/platform/window.c"
-        "src/platform/render.c"
+        "src/render/render.c"
+        "src/core/engine.c"
     PUBLIC
         FILE_SET HEADERS # Quick little shortcut, if FILE_SET name = TYPE, you can leave out TYPE
         BASE_DIRS

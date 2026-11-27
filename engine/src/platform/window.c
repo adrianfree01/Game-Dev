@@ -22,7 +22,7 @@ void processInput(GLFWwindow *window)
         glfwSetWindowShouldClose(window, true);
 }
 
-void windowLoop(struct engineStruct* windowPtr){
+void windowLoop(struct engine* windowPtr){
     while(!glfwWindowShouldClose(windowPtr->window)) {
         processInput(windowPtr->window);
 
@@ -33,7 +33,7 @@ void windowLoop(struct engineStruct* windowPtr){
     }
 }
 
-int createWindow(int width, int height, char* windowName, struct engineStruct* windowPtr) {
+int createWindow(int width, int height, char* windowName, struct engine* windowPtr) {
 
     glfwSetErrorCallback(errorCallback);
     
@@ -64,7 +64,7 @@ int createWindow(int width, int height, char* windowName, struct engineStruct* w
     return 1;
 }
 
-void destroyWindow(struct engineStruct* windowPtr){
+void destroyWindow(struct engine* windowPtr){
     glfwDestroyWindow(windowPtr->window);
     glfwTerminate();
     windowPtr->window = NULL;

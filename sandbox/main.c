@@ -3,7 +3,7 @@
 
 int main() {
     
-    struct engineStruct engineWindow;
+    struct engine engineWindow;
     if(!createWindow(800, 600, "Engine", &engineWindow))
         return 1;
 
